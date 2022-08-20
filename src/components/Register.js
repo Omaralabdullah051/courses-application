@@ -12,15 +12,12 @@ import image from "../assets/images/cover.png";
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, hookError] =
-    useCreateUserWithEmailAndPassword(auth, {
-      sendEmailVerification: true,
-    });
+    useCreateUserWithEmailAndPassword(auth);
   const [updateProfile] = useUpdateProfile(auth);
   const [error, setError] = useState("");
   const [agree, setAgree] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const userEmail = user?.user?.email;
 
   let from = location.state?.from?.pathname || "/";
 

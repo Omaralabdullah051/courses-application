@@ -32,7 +32,7 @@ const Banner = () => {
         </p>
         <button
           onClick={handleNavigate}
-          className="px-4  py-1 md:px-8 text-sm md:text-base md:py-2 bg-[#38BDF8] text-[#ffffff] rounded font-bold mt-2  hover:bg-gray-400 hover:text-black focus:ring-4 focus:ring-offset-slate-800 md:mb-8 xl:mb-0"
+          className="px-4 py-1 md:px-8 text-sm md:text-base md:py-2 bg-[#38BDF8] text-[#ffffff] rounded font-bold mt-2  hover:bg-gray-400 hover:text-black focus:ring-4 focus:ring-offset-slate-800 md:mb-8 xl:mb-0"
         >
           Info
         </button>
