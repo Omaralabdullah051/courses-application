@@ -1,3 +1,4 @@
+import AboutSection from "./AboutSection";
 import Banner from "./Banner";
 import CourseFour from "./CourseFour";
 import CourseOne from "./CourseOne";
@@ -12,6 +13,7 @@ const Home = () => {
       <CourseTwo />
       <CourseThree />
       <CourseFour />
+      <AboutSection />
     </div>
   );
 };
