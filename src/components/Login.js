@@ -4,12 +4,13 @@ import {
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import auth from "../firebase.init";
 // import LoadingState from "../../Shared/LoadingState/LoadingState";
 // import SocialLogin from "../SocialLogin/SocialLogin";
 import image from "../assets/images/cover.png";
+import SocialLogin from "./SocialLogin";
 // import PageTitle from "../../Shared/PageTitle/PageTitle";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const emailRef = useRef("");
@@ -38,11 +39,25 @@ const Login = () => {
     const email = emailRef?.current?.value;
     if (email) {
       await sendPasswordResetEmail(email);
-      toast(
-        "Email is sent to reset your password. Please check you mail inbox"
-      );
+      Swal.fire({
+        title: "Error",
+        text: "Email is sent to reset your password. Please check you mail inbox",
+        icon: "error",
+        color: "#a3a3a3",
+        background: "#1e293b",
+        confirmButtonColor: "#166534",
+        confirmButtonText: "OK",
+      });
     } else {
-      toast("Please provide your email");
+      Swal.fire({
+        title: "Error",
+        text: "Please provide your email",
+        icon: "error",
+        color: "#a3a3a3",
+        background: "#1e293b",
+        confirmButtonColor: "#166534",
+        confirmButtonText: "OK",
+      });
     }
   };
 
@@ -50,22 +65,54 @@ const Login = () => {
     if (hookError) {
       switch (hookError?.code) {
         case "auth/invalid-email":
-          toast.error("Invalid email provided, please provide a valid email");
+          Swal.fire({
+            title: "Error",
+            text: "Invalid email provided, please provide a valid email",
+            icon: "error",
+            color: "#a3a3a3",
+            background: "#1e293b",
+            confirmButtonColor: "#166534",
+            confirmButtonText: "OK",
+          });
           setError("Invalid email provided, please provide a valid email");
           break;
 
         case "auth/user-not-found":
-          toast.error("User not found");
+          Swal.fire({
+            title: "Error",
+            text: "User not found",
+            icon: "error",
+            color: "#a3a3a3",
+            background: "#1e293b",
+            confirmButtonColor: "#166534",
+            confirmButtonText: "OK",
+          });
           setError("User not found");
           break;
 
         case "auth/wrong-password":
-          toast.error("Wrong password");
+          Swal.fire({
+            title: "Error",
+            text: "Wrong password",
+            icon: "error",
+            color: "#a3a3a3",
+            background: "#1e293b",
+            confirmButtonColor: "#166534",
+            confirmButtonText: "OK",
+          });
           setError("Wrong password");
           break;
 
         default:
-          toast.error(hookError?.message);
+          Swal.fire({
+            title: "Error",
+            text: hookError.message,
+            icon: "error",
+            color: "#a3a3a3",
+            background: "#1e293b",
+            confirmButtonColor: "#166534",
+            confirmButtonText: "OK",
+          });
           setError(hookError?.message);
       }
     }
@@ -137,7 +184,7 @@ const Login = () => {
             type="submit"
             value="Login"
           />
-          {/* <SocialLogin /> */}
+          <SocialLogin />
         </form>
       </div>
     </div>

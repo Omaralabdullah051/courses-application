@@ -17,7 +17,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
       </Routes>
       <Footer />
-      <ToastContainer />
+      <ToastContainer position="bottom-right" newestOnTop />
     </div>
   );
 };

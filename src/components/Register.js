@@ -5,10 +5,11 @@ import {
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import auth from "../firebase.init";
-import { toast } from "react-toastify";
 // import LoadingState from "../../Shared/LoadingState/LoadingState";
 // import SocialLogin from "../SocialLogin/SocialLogin";
 import image from "../assets/images/cover.png";
+import Swal from "sweetalert2";
+import SocialLogin from "./SocialLogin";
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, hookError] =
@@ -104,27 +105,57 @@ const Register = () => {
     if (hookError) {
       switch (hookError?.code) {
         case "auth/invalid-email":
-          toast.error("Invalid email provided, please provide a valid email");
+          Swal.fire({
+            title: "Error",
+            text: "Invalid email provided, please provide a valid email",
+            icon: "error",
+            color: "#a3a3a3",
+            background: "#1e293b",
+            confirmButtonColor: "#166534",
+            confirmButtonText: "OK",
+          });
           setError("Invalid email provided, please provide a valid email");
           setAgree(!agree);
           break;
 
         case "auth/email-already-in-use":
-          toast.error("This email is already in used");
+          Swal.fire({
+            title: "Error",
+            text: "This email is already in used",
+            icon: "error",
+            color: "#a3a3a3",
+            background: "#1e293b",
+            confirmButtonColor: "#166534",
+            confirmButtonText: "OK",
+          });
           setError("This email is already in used");
           setAgree(!agree);
           break;
 
         case "auth/email-already-exists":
-          toast.error("Email already exists");
+          Swal.fire({
+            title: "Error",
+            text: "Email already exists",
+            icon: "error",
+            color: "#a3a3a3",
+            background: "#1e293b",
+            confirmButtonColor: "#166534",
+            confirmButtonText: "OK",
+          });
           setError("Email already exists");
           setAgree(!agree);
           break;
 
         case "auth/invalid-credential":
-          toast.error(
-            "Doesn't allow creation of multiple account with the same email"
-          );
+          Swal.fire({
+            title: "Error",
+            text: "Doesn't allow creation of multiple account with the same email",
+            icon: "error",
+            color: "#a3a3a3",
+            background: "#1e293b",
+            confirmButtonColor: "#166534",
+            confirmButtonText: "OK",
+          });
           setError(
             "Doesn't allow creation of multiple account with the same email"
           );
@@ -132,24 +163,20 @@ const Register = () => {
           break;
 
         default:
-          toast.error(hookError?.message);
+          Swal.fire({
+            title: "Error",
+            text: hookError?.message,
+            icon: "error",
+            color: "#a3a3a3",
+            background: "#1e293b",
+            confirmButtonColor: "#166534",
+            confirmButtonText: "OK",
+          });
           setError(hookError?.message);
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hookError]); //here I changed agree state inside useEffect hook on every render. I don't use agreee dependency because every time when the agree state changed it will call the useEffect again and again.
-
-  useEffect(() => {
-    if (user) {
-      if (!user?.user?.emailVerified) {
-        toast.success(
-          "Your authentication process is almost done. You need to verify your email. You can verify your email at any time if neccessary"
-        );
-      } else {
-        toast.success("User created successfully");
-      }
-    }
-  }, [user]);
 
   useEffect(() => {
     if (user) {
@@ -274,7 +301,7 @@ const Register = () => {
             value="Register"
           />
 
-          {/* <SocialLogin /> */}
+          <SocialLogin />
         </form>
       </div>
     </div>
