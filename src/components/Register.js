@@ -5,8 +5,7 @@ import {
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import auth from "../firebase.init";
-// import LoadingState from "../../Shared/LoadingState/LoadingState";
-// import SocialLogin from "../SocialLogin/SocialLogin";
+import LoadingState from "./LoadingState";
 import image from "../assets/images/cover.png";
 import Swal from "sweetalert2";
 import SocialLogin from "./SocialLogin";
@@ -184,9 +183,9 @@ const Register = () => {
     }
   }, [user, from, navigate]);
 
-  //   if (loading) {
-  //     return <LoadingState />;
-  //   }
+  if (loading) {
+    return <LoadingState />;
+  }
 
   return (
     <div className="text-[#38BDF8] font-bold mb-52">

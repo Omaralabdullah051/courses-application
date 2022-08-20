@@ -3,7 +3,7 @@ import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import auth from "../firebase.init";
-// import LoadingState from "../../Shared/LoadingState/LoadingState";
+import LoadingState from "./LoadingState";
 
 const SocialLogin = () => {
   const [signInWithGoogle, googleUser, loading, googleError] =
@@ -79,9 +79,9 @@ const SocialLogin = () => {
     }
   }, [googleUser, navigate, from]);
 
-  //   if (loading) {
-  //     return <LoadingState />;
-  //   }
+  if (loading) {
+    return <LoadingState />;
+  }
 
   return (
     <div className="mb-2 md:mb-8">

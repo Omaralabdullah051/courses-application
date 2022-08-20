@@ -5,11 +5,9 @@ import {
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../firebase.init";
-// import LoadingState from "../../Shared/LoadingState/LoadingState";
-// import SocialLogin from "../SocialLogin/SocialLogin";
+import LoadingState from "./LoadingState";
 import image from "../assets/images/cover.png";
 import SocialLogin from "./SocialLogin";
-// import PageTitle from "../../Shared/PageTitle/PageTitle";
 import Swal from "sweetalert2";
 
 const Login = () => {
@@ -124,9 +122,9 @@ const Login = () => {
     }
   }, [user, navigate, from]);
 
-  //   if (loading) {
-  //     return <LoadingState />;
-  //   }
+  if (loading) {
+    return <LoadingState />;
+  }
 
   return (
     <div className="text-[#38BDF8] font-bold mb-52">
