@@ -1,10 +1,12 @@
 import { useLayoutEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import About from "./components/About";
 import Checkout from "./components/Checkout";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./components/Home";
+import Info from "./components/Info";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import RequireAuth from "./components/RequireAuth";
@@ -25,6 +27,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/info" element={<Info />} />
+          <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route

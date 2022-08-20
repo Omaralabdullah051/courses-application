@@ -12,7 +12,6 @@ const Header = () => {
         <ul className="flex justify-center items-center p-2 text-sm font-semibold space-x-6">
           <CustomActiveLink to="/">Home</CustomActiveLink>
           <CustomActiveLink to="/checkout">Checkout</CustomActiveLink>
-          <CustomActiveLink to="/blogs">Blogs</CustomActiveLink>
           <CustomActiveLink to="/info">Info</CustomActiveLink>
           <CustomActiveLink to="/About">About</CustomActiveLink>
           {!user ? (

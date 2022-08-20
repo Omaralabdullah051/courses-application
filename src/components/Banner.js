@@ -10,7 +10,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="bg-gray-800 m-5 md:m-10 rounded-2xl md:grid md:grid-cols-2 md:gap-2 xl:gap-4 pb-20">
+    <div className="bg-gray-800 m-5 md:m-14 rounded-2xl md:grid md:grid-cols-2 md:gap-2 xl:gap-4 pb-20">
       <div className="text-[#38BDF8] font-bold pl-4 pt-5 md:pt-20 md:pl-6 lg:pl-12 lg:pt-32 xl:pl-32 xl:pt-48">
         <h5 className="md:text-3xl xl:text-4xl">
           <i>Buy Courses Right Now</i>
