@@ -38,7 +38,7 @@ const Footer = () => {
             <a
               href="https://www.instagram.com/ab_omar.7/   "
               target="blank"
-              className="flex justify-center items-center bg-[#38BDF8] text-black mb-3 mr-2 px-1 rounded cursor-pointer hover:bg-green-900 hover:text-gray-400 focus:ring-4 focus:ring-offset-slate-800"
+              className="flex justify-center items-center bg-[#38BDF8] text-black mb-3 mr-2 px-1 rounded cursor-pointer hover:bg-[#38BDF8]/50 hover:text-gray-900 focus:ring-4 focus:ring-offset-slate-800"
             >
               <img
                 className="w-12"
@@ -50,7 +50,7 @@ const Footer = () => {
             <a
               href="https://www.facebook.com/profile.php?id=100048860175423"
               target="blank"
-              className="flex justify-center items-center bg-[#38BDF8] text-black mb-3 mr-2 px-1 py-[2px] rounded cursor-pointer hover:bg-green-900 hover:text-gray-400 focus:ring-4 focus:ring-offset-slate-800"
+              className="flex justify-center items-center bg-[#38BDF8] text-black mb-3 mr-2 px-1 py-[2px] rounded cursor-pointer hover:bg-[#38BDF8]/50 hover:text-gray-900 focus:ring-4 focus:ring-offset-slate-800"
             >
               <img
                 className="w-11"
@@ -62,7 +62,7 @@ const Footer = () => {
             <a
               href="https://github.com/Omaralabdullah051"
               target="blank"
-              className="flex justify-center items-center bg-[#38BDF8] text-black mb-3 p-1 px-3 rounded cursor-pointer hover:bg-green-900 hover:text-gray-400 focus:ring-4 focus:ring-offset-slate-800 mr-2 md:mr-0"
+              className="flex justify-center items-center bg-[#38BDF8] text-black mb-3 p-1 px-3 rounded cursor-pointer hover:bg-[#38BDF8]/50 hover:text-gray-900 focus:ring-4 focus:ring-offset-slate-800 mr-2 md:mr-0"
             >
               <img
                 className="w-10 mr-1"
